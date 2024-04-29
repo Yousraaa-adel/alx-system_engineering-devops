@@ -4,27 +4,16 @@
 # display minutes from 1 to 59
 
 hour=0
-min=0
+min=1
 
 
 while [ $hour -le 12 ]
 do
-
-    if [ $hour -eq 0 ]
-    then
-        echo "Hour: $hour"
-        hour=$(( hour + 1 ))
-    fi
-
+    echo "Hour: $hour"
     min=0
-    while [ $min -le 60 ]
+    while [ $min -le 59 ]
     do
-        if [ $min -eq 60 ]
-        then
-            echo "Hour: $hour"
-        else
-            echo "$min"
-        fi
+        echo "$min"
         min=$(( min + 1 ))
     done
     hour=$(( hour + 1 ))
