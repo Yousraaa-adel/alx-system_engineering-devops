@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Displays:
+# The content of the current directory in a list format
+# Where only the part of the name after the first dash is displayed 
+
+for filename in *; do
+  # Check if it's a file (and not a directory)
+  if [ -f "$filename" ]; then
+    # Extract the part of the name after the first dash
+    # Check if there's a dash in the filename
+    if [[ "$filename" == *-* ]]; then
+      # Extract the substring after the first dash
+      # ${filename#*-} removes everything up to and including the first dash
+      extracted_name="${filename#*-}"
+    else
+      # If there's no dash, just use the original name
+      extracted_name="$filename"
+    fi
+    # Display the extracted name
+    echo "$extracted_name"
+  fi
+done
