@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-# Bash script that uses ssh to connect to your server using the private key.
-ssh-keygen -b 4096 -f school -N betty
+# Define the key name, key size, and passphrase
+
+KEY_NAME="school"
+KEY_SIZE=4096
+PASSPHRASE="betty"
+
+# Generate the RSA key pair
+ssh-keygen -t rsa -b $KEY_SIZE -f $KEY_NAME -N $PASSPHRASE
