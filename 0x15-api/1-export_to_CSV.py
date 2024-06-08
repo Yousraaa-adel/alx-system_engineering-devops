@@ -28,7 +28,12 @@ if __name__ == "__main__":
 
     with open("USER_ID.csv", "w") as file:
         writer = csv.writer(file)
-        writer.writerow(["USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"])
+        writer.writerow([
+            "USER_ID",
+            "USERNAME",
+            "TASK_COMPLETED_STATUS",
+            "TASK_TITLE"
+            ])
 
         for task in todos_data:
             writer.writerow(
